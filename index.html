@@ -20,11 +20,7 @@
             --accent-gold: #ffd700;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -36,20 +32,12 @@
             position: relative;
         }
 
-        /* Efeito de brilho animado de fundo */
+        /* Animação de fundo */
         body::before {
-            content: '';
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(255, 223, 0, 0.03) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
+            animation: pulse 8s ease-in-out infinite; pointer-events: none; z-index: 0;
         }
-
         @keyframes pulse {
             0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
             50% { transform: scale(1.2) rotate(180deg); opacity: 0.5; }
@@ -57,524 +45,192 @@
 
         /* HEADER */
         header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
+            position: sticky; top: 0; z-index: 1000; padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(20px);
             border-bottom: 3px solid var(--brasil-yellow);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
         }
-
         .header-content {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1600px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center;
         }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
+        .brand { display: flex; align-items: center; gap: 20px; }
         .cbf-badge {
-            width: 70px;
-            height: 70px;
+            width: 70px; height: 70px; border-radius: 50%;
             background: linear-gradient(135deg, var(--brasil-green), var(--brasil-yellow));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            color: var(--brasil-blue);
-            font-weight: bold;
-            box-shadow: 0 5px 20px rgba(255, 223, 0, 0.4);
-            animation: float 3s ease-in-out infinite;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 5px 20px rgba(255, 223, 0, 0.4); animation: float 3s infinite;
         }
-
-        .sb-badge {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            color: var(--brasil-blue);
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
+        .sb-badge { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 15px; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        
         h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
+            font-family: 'Bebas Neue', cursive; font-size: 3rem; margin: 0;
             background: linear-gradient(90deg, var(--brasil-yellow) 0%, #fff 50%, var(--brasil-yellow) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 3px;
-            text-shadow: 0 0 30px rgba(255, 223, 0, 0.5);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            letter-spacing: 3px; text-shadow: 0 0 30px rgba(255, 223, 0, 0.5);
         }
 
-        .formation-selector {
-            position: relative;
-            color: #000;
-        }
-
+        /* SELECT */
+        .formation-selector { position: relative; }
         select {
             background: linear-gradient(135deg, var(--brasil-green), #007a2e);
-            border: 2px solid var(--brasil-yellow);
-            color: #fff;
-            padding: 15px 25px;
-            border-radius: 12px;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            outline: none;
-            transition: all 0.3s ease;
+            border: 2px solid var(--brasil-yellow); color: #fff; padding: 15px 25px;
+            border-radius: 12px; font-family: 'Oswald', sans-serif; font-weight: 600;
+            font-size: 1.1rem; cursor: pointer; outline: none; transition: 0.3s;
             box-shadow: 0 5px 15px rgba(0, 156, 59, 0.4);
         }
-
-        select option {
-            background-color: #000;
-            color: var(--brasil-yellow);
-        }
-
-        select:hover {
-            background: linear-gradient(135deg, #007a2e, var(--brasil-green));
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 223, 0, 0.6);
-        }
+        select option { background-color: #000; color: var(--brasil-yellow); }
 
         /* CONTAINER PRINCIPAL */
         .main-container {
-            max-width: 1600px;
-            margin: 40px auto;
-            padding: 20px;
-            display: flex;
-            gap: 40px;
-            position: relative;
-            z-index: 1;
+            max-width: 1600px; margin: 40px auto; padding: 20px;
+            display: flex; gap: 40px; position: relative; z-index: 1;
         }
 
-        /* CAMPO DE FUTEBOL */
+        /* CAMPO (Versão Desktop) */
         .pitch-area {
-            flex: 2;
-            min-width: 750px;
-            height: 900px;
-            background:
-                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                repeating-linear-gradient(0deg,
-                    #1e7a34,
-                    #1e7a34 45px,
-                    #267d3c 45px,
-                    #267d3c 90px);
-            border-radius: 20px;
-            position: relative;
-            border: 5px solid rgba(255, 223, 0, 0.3);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), inset 0 0 100px rgba(0, 0, 0, 0.3);
+            flex: 2; min-width: 750px; height: 900px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), repeating-linear-gradient(0deg, #1e7a34, #1e7a34 45px, #267d3c 45px, #267d3c 90px);
+            border-radius: 20px; position: relative; border: 5px solid rgba(255,223,0,0.3);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.8), inset 0 0 100px rgba(0,0,0,0.3);
             overflow: hidden;
         }
+        .pitch-lines { position: absolute; top: 30px; bottom: 30px; left: 30px; right: 30px; border: 3px solid rgba(255,255,255,0.7); border-radius: 5px; pointer-events: none; }
+        .pitch-mid { position: absolute; top: 50%; left: 0; width: 100%; height: 3px; background: rgba(255,255,255,0.7); transform: translateY(-50%); pointer-events: none; }
+        .pitch-circle { position: absolute; top: 50%; left: 50%; width: 160px; height: 160px; border: 3px solid rgba(255,255,255,0.7); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+        .pitch-circle::after { content:''; position:absolute; top:50%; left:50%; width:12px; height:12px; background:rgba(255,255,255,0.7); border-radius:50%; transform:translate(-50%, -50%); }
+        .field-players { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 10; }
 
-        .pitch-lines {
-            position: absolute; top: 30px; bottom: 30px; left: 30px; right: 30px;
-            border: 3px solid rgba(255, 255, 255, 0.7); pointer-events: none; border-radius: 5px;
-        }
-
-        .pitch-mid {
-            position: absolute; top: 50%; left: 0; width: 100%; height: 3px;
-            background: rgba(255, 255, 255, 0.7); transform: translateY(-50%); pointer-events: none;
-        }
-
-        .pitch-circle {
-            position: absolute; top: 50%; left: 50%; width: 160px; height: 160px;
-            border: 3px solid rgba(255, 255, 255, 0.7); border-radius: 50%;
-            transform: translate(-50%, -50%); pointer-events: none;
-        }
-
-        .pitch-circle::after {
-            content: ''; position: absolute; top: 50%; left: 50%; width: 12px; height: 12px;
-            background: rgba(255, 255, 255, 0.7); border-radius: 50%; transform: translate(-50%, -50%);
-        }
-
-        .field-players {
-            position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 10;
-        }
-
-        /* CARDS DOS JOGADORES */
+        /* CARDS */
         .player-card {
-            width: 130px;
-            height: 180px;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+            width: 130px; height: 180px; position: absolute; transform: translate(-50%, -50%);
+            cursor: pointer; transition: all 0.4s; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
         }
-
-        .player-card:hover {
-            transform: translate(-50%, -50%) scale(1.2) rotateY(5deg);
-            z-index: 100;
-            filter: drop-shadow(0 20px 40px rgba(255, 223, 0, 0.6));
-        }
+        .player-card:hover { transform: translate(-50%, -60%) scale(1.15); z-index: 100; filter: drop-shadow(0 20px 40px rgba(255,223,0,0.6)); }
 
         .card-body {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-            background: linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, rgba(0, 0, 0, 1) 100%);
-            border: 3px solid #333;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            position: relative;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column; /* Alterado para coluna para separar imagem e texto */
+            width: 100%; height: 100%; border-radius: 12px; overflow: hidden;
+            background: linear-gradient(180deg, #121212 0%, #000 100%); border: 2px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7); display: flex; flex-direction: column;
         }
-
-        .card-body.filled {
-            border-color: var(--brasil-yellow);
-            background: linear-gradient(180deg, var(--brasil-blue) 0%, #000 100%);
-        }
-
-        .card-body.filled::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-            background: linear-gradient(90deg, var(--brasil-green), var(--brasil-yellow), var(--brasil-green));
-        }
-
-        .card-body.empty {
-            background: rgba(0, 0, 0, 0.6);
-            border: 3px dashed rgba(255, 255, 255, 0.2);
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        .card-body.empty i {
-            font-size: 2.5rem; color: rgba(255, 255, 255, 0.15); transition: all 0.3s ease;
-        }
-
-        .player-card:hover .card-body.empty i {
-            color: var(--brasil-yellow); transform: rotate(90deg);
-        }
-
-        /* AJUSTE PARA FOTO NÃO FICAR EM CIMA DA LETRA */
+        .card-body.filled { border-color: var(--brasil-yellow); border-top: 4px solid var(--brasil-green); }
+        .card-body.empty { background: rgba(0,0,0,0.5); border: 2px dashed rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; }
+        .card-body.empty i { font-size: 2.5rem; color: rgba(255,255,255,0.15); }
+        
+        /* FOTO */
         .card-body img {
-            width: 100%;
-            height: 75%; /* Foto ocupa 75% do card */
-            object-fit: cover;
-            object-position: top center;
-            transition: transform 0.3s ease;
+            width: 100%; height: 75%; object-fit: cover; object-position: top;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
         }
-
-        .player-card:hover .card-body img { transform: scale(1.05); }
-
+        
+        /* NOME E POSIÇÃO (Separados da foto) */
         .card-info {
-            height: 25%; /* Texto ocupa 25% do card */
-            width: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.8) 100%);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            z-index: 20;
+            height: 25%; width: 100%; background: #000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            border-top: 1px solid #333; z-index: 20; padding: 2px 0;
         }
-
         .p-name {
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: #fff;
-            text-transform: uppercase;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-            letter-spacing: 0.5px;
-            line-height: 1;
-            margin-bottom: 2px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            padding: 0 2px;
+            font-size: 0.85rem; font-weight: 800; color: #fff; text-transform: uppercase;
+            text-align: center; white-space: nowrap; width: 95%; overflow: hidden; text-overflow: ellipsis;
         }
+        .p-pos { font-size: 0.7rem; color: var(--brasil-yellow); font-family: 'Oswald'; font-weight: bold; }
 
-        .p-pos {
-            font-size: 0.75rem;
-            color: var(--brasil-yellow);
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-            line-height: 1;
-        }
-
-        /* ÁREA DE CONVOCADOS */
+        /* BANCO */
         .bench-area {
-            flex: 1;
-            min-width: 380px;
-            height: 900px;
-            background: rgba(12, 12, 12, 0.95);
-            border: 2px solid rgba(255, 223, 0, 0.3);
-            border-radius: 20px;
-            padding: 30px;
-            display: flex; flex-direction: column;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            flex: 1; min-width: 380px; height: 900px;
+            background: rgba(12,12,12,0.95); border: 2px solid rgba(255,223,0,0.3);
+            border-radius: 20px; padding: 30px; display: flex; flex-direction: column;
             backdrop-filter: blur(10px);
         }
-
-        .bench-header {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;
-            padding-bottom: 20px; border-bottom: 3px solid var(--brasil-green);
-        }
-
-        .bench-header h3 {
-            font-family: 'Bebas Neue', cursive; font-size: 2rem;
-            background: linear-gradient(90deg, var(--brasil-yellow), var(--brasil-green));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 2px;
-        }
-
-        .counter {
-            background: linear-gradient(135deg, var(--brasil-green), #007a2e);
-            color: #fff; padding: 8px 20px; border-radius: 25px; font-weight: bold;
-            font-family: 'Oswald', sans-serif; font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(0, 156, 59, 0.4); border: 2px solid var(--brasil-yellow);
-        }
-
-        .bench-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
-            gap: 15px; overflow-y: auto; padding-right: 5px;
-        }
-        
-        .bench-grid::-webkit-scrollbar { width: 8px; }
-        .bench-grid::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
-        .bench-grid::-webkit-scrollbar-thumb { background: var(--brasil-green); border-radius: 10px; }
-
-        .bench-slot {
-            height: 115px; background: #1a1a1a; border-radius: 12px; cursor: pointer;
-            position: relative; border: 2px solid #333; transition: all 0.3s ease; overflow: hidden;
-        }
-
-        .bench-slot:hover {
-            border-color: var(--brasil-yellow); background: #252525; transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 223, 0, 0.3);
-        }
-
+        .bench-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 3px solid var(--brasil-green); padding-bottom: 15px; }
+        .bench-header h3 { font-family: 'Bebas Neue'; font-size: 2rem; color: #fff; margin: 0; }
+        .counter { background: var(--brasil-green); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-family: 'Oswald'; border: 1px solid var(--brasil-yellow); }
+        .bench-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 10px; overflow-y: auto; padding-right: 5px; flex-grow: 1; }
+        .bench-slot { height: 110px; background: #1a1a1a; border-radius: 10px; border: 2px solid #333; position: relative; cursor: pointer; overflow: hidden; }
+        .bench-slot:hover { border-color: var(--brasil-yellow); }
         .bench-slot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .bench-name { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.9); font-size: 0.7rem; text-align: center; font-weight: bold; padding: 3px 0; }
+        .coach-section { text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #333; }
+        .coach-name { font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--brasil-yellow); }
+        #suggestBtn { background: transparent; border: 1px solid #444; color: #888; padding: 8px 20px; border-radius: 20px; cursor: pointer; margin-top: 10px; }
 
-        .bench-name {
-            position: absolute; bottom: 0; width: 100%; font-size: 0.75rem;
-            background: rgba(0, 0, 0, 0.95); text-align: center; color: #fff;
-            padding: 6px 2px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-        }
-
-        .coach-section {
-            margin-top: auto; padding-top: 25px; border-top: 2px solid #333; text-align: center;
-        }
-
-        .coach-label {
-            font-size: 0.85rem; color: #888; letter-spacing: 3px; margin-bottom: 8px; font-weight: 600;
-        }
-
-        .coach-name {
-            font-family: 'Bebas Neue', cursive; font-size: 1.8rem; font-weight: bold;
-            background: linear-gradient(90deg, #fff, var(--brasil-yellow));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px;
-        }
-        
-        #suggestBtn {
-            padding: 10px 20px; border-radius: 20px; border: 1px solid #444; background: transparent;
-            color: #888; cursor: pointer; transition: 0.3s;
-        }
-        #suggestBtn:hover { border-color: var(--brasil-yellow); color: var(--brasil-yellow); }
+        /* AÇÃO */
+        .action-bar { text-align: center; margin: 40px 0; }
+        .btn-main { padding: 20px 70px; font-size: 1.4rem; font-family: 'Bebas Neue'; background: linear-gradient(135deg, var(--brasil-yellow), #ffc500); color: #000; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 40px rgba(255,223,0,0.4); display: inline-flex; gap: 10px; align-items: center; }
 
         /* MODAL */
-        .modal {
-            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.97); display: none;
-            justify-content: center; align-items: center; z-index: 2000; backdrop-filter: blur(15px);
-        }
+        .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 2000; }
+        .modal-box { width: 95%; max-width: 1000px; height: 90vh; background: #111; border: 2px solid var(--brasil-yellow); border-radius: 20px; display: flex; flex-direction: column; }
+        .modal-header { padding: 25px; border-bottom: 2px solid #222; display: flex; justify-content: space-between; align-items: center; background: #000; }
+        .search-container { padding: 20px; background: #151515; }
+        #searchBox { width: 100%; padding: 15px; background: #222; border: 1px solid #444; color: #fff; border-radius: 10px; font-size: 1.1rem; outline: none; }
+        .player-grid { padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; overflow-y: auto; }
+        .select-card { background: #222; border: 1px solid #333; padding: 10px; border-radius: 10px; text-align: center; cursor: pointer; }
+        .select-card:hover { border-color: var(--brasil-yellow); background: #333; }
+        .select-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #000; margin-bottom: 10px; }
 
-        .modal-box {
-            width: 95%; max-width: 1100px; height: 90vh;
-            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-            border: 3px solid var(--brasil-yellow); border-radius: 25px;
-            display: flex; flex-direction: column; box-shadow: 0 0 100px rgba(255, 223, 0, 0.3); overflow: hidden;
-        }
+        /* FOOTER */
+        footer { background: #080808; margin-top: auto; padding: 40px 20px; border-top: 2px solid #333; }
+        .footer-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-social a { color: #fff; font-size: 1.5rem; margin-left: 15px; }
+        .footer-bottom { text-align: center; margin-top: 30px; color: #666; font-size: 0.8rem; }
 
-        .modal-header {
-            padding: 30px 40px; border-bottom: 3px solid var(--brasil-green);
-            display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-header h2 {
-            font-family: 'Bebas Neue', cursive; font-size: 2.5rem;
-            background: linear-gradient(90deg, var(--brasil-yellow), #fff);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 2px;
-        }
-
-        .close-btn {
-            background: none; border: none; color: #fff; font-size: 3rem; cursor: pointer;
-            transition: all 0.3s ease; line-height: 1; width: 50px; height: 50px;
-            display: flex; align-items: center; justify-content: center; border-radius: 50%;
-        }
-
-        .close-btn:hover {
-            color: var(--brasil-yellow); background: rgba(255, 223, 0, 0.1); transform: rotate(90deg);
-        }
-
-        .search-container { padding: 25px 40px; background: rgba(0, 0, 0, 0.3); }
-
-        #searchBox {
-            width: 100%; padding: 20px 25px; background: #1a1a1a; border: 2px solid #333;
-            color: white; border-radius: 15px; font-size: 1.1rem; outline: none;
-            font-family: 'Montserrat', sans-serif; transition: all 0.3s ease;
-        }
-
-        #searchBox:focus { border-color: var(--brasil-yellow); box-shadow: 0 0 20px rgba(255, 223, 0, 0.3); }
-
-        .player-grid {
-            padding: 30px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 25px; overflow-y: auto;
-        }
-        
-        .player-grid::-webkit-scrollbar { width: 10px; }
-        .player-grid::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
-        .player-grid::-webkit-scrollbar-thumb { background: var(--brasil-green); border-radius: 10px; }
-
-        .select-card {
-            background: var(--brasil-blue); color: #fff; padding: 20px; border-radius: 15px;
-            text-align: center; cursor: pointer; border: 2px solid #2a2a2a; transition: all 0.4s ease;
-            display: flex; flex-direction: column; align-items: center;
-        }
-
-        .select-card:hover {
-            border-color: var(--brasil-yellow); background: #252525; transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(255, 223, 0, 0.3);
-        }
-
-        .select-card img {
-            width: 110px; height: 110px; border-radius: 50%; object-fit: cover; object-position: top;
-            margin-bottom: 15px; border: 3px solid var(--brasil-green); background: #333; transition: all 0.3s ease;
-        }
-
-        .select-card:hover img { border-color: var(--brasil-yellow); transform: scale(1.1); }
-
-        .select-card .player-name { font-weight: 800; color: #fff; font-size: 1rem; margin-bottom: 5px; }
-        .select-card .player-pos { font-size: 0.85rem; color: var(--brasil-yellow); font-weight: 600; font-family: 'Oswald', sans-serif; }
-
-        /* BOTÃO DE EXPORTAR */
-        .action-bar { text-align: center; margin: 40px 0; position: relative; z-index: 1; }
-
-        .btn-main {
-            padding: 22px 80px; font-size: 1.4rem; font-family: 'Bebas Neue', cursive; font-weight: 700;
-            background: linear-gradient(135deg, var(--brasil-yellow), #ffc500); color: #000; border: none;
-            border-radius: 50px; cursor: pointer; box-shadow: 0 10px 40px rgba(255, 223, 0, 0.4);
-            transition: all 0.4s ease; text-transform: uppercase; display: inline-flex; align-items: center;
-            gap: 15px; letter-spacing: 2px; position: relative; overflow: hidden;
-        }
-
-        .btn-main::before {
-            content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0;
-            background: rgba(255, 255, 255, 0.3); border-radius: 50%; transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-
-        .btn-main:hover::before { width: 300%; height: 300%; }
-        .btn-main:hover { transform: scale(1.08); box-shadow: 0 15px 60px rgba(255, 223, 0, 0.7); }
-        .btn-main i, .btn-main span { position: relative; z-index: 1; }
-
-        /* FOOTER MODERNO */
-        footer {
-            background: #080808; margin-top: auto; border-top: 3px solid transparent;
-            border-image: linear-gradient(90deg, var(--brasil-green), var(--brasil-yellow), var(--brasil-blue)) 1;
-            padding-top: 40px; position: relative; z-index: 50; box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .footer-container {
-            max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex;
-            justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
-        }
-
-        .footer-brand h2 { font-family: 'Chakra Petch', sans-serif; color: #fff; margin-bottom: 5px; }
-        .footer-brand span { color: var(--brasil-yellow); }
-        .footer-brand p { color: #666; font-size: 0.8rem; letter-spacing: 1px; }
-
-        .footer-social { display: flex; gap: 20px; }
-        .footer-social a {
-            width: 45px; height: 45px; background: #1a1a1a; display: flex; justify-content: center;
-            align-items: center; border-radius: 50%; color: #fff; font-size: 1.2rem; text-decoration: none;
-            transition: 0.3s; border: 1px solid #333;
-        }
-        .footer-social a:hover {
-            background: var(--brasil-blue); color: var(--brasil-yellow); transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(0, 39, 118, 0.6); border-color: var(--brasil-yellow);
-        }
-
-        .footer-dev { text-align: right; }
-        .footer-dev p { color: #aaa; font-size: 0.9rem; margin-bottom: 5px; }
-        .tech-stack { color: #444; font-size: 1.2rem; gap: 10px; display: flex; justify-content: flex-end; }
-        .footer-bottom {
-            background: #000; text-align: center; padding: 15px; margin-top: 40px;
-            font-size: 0.75rem; color: #444; font-family: 'Chakra Petch'; letter-spacing: 2px; text-transform: uppercase;
-        }
-
-        /* ==========================================================================
-           RESPONSIVIDADE (MOBILE E TABLET) - OTIMIZAÇÃO SOLICITADA
-           ==========================================================================
-        */
-        @media (max-width: 1200px) {
-            .main-container { flex-direction: column; align-items: center; }
-            .pitch-area { width: 100%; min-width: 0; max-width: 800px; height: 130vw; max-height: 800px; }
-            .bench-area { width: 100%; max-width: 800px; height: auto; max-height: 600px; }
-            
-            /* Ajuste proporcional dos cards para não quebrar */
-            .player-card { width: 18vw; height: 26vw; max-width: 110px; max-height: 150px; }
-            .p-name { font-size: 0.7rem; }
-            .p-pos { font-size: 0.6rem; }
-            h1 { font-size: 2.5rem; }
-        }
-
-        @media (max-width: 768px) {
+        /* =========================================================================
+           CORREÇÃO CRÍTICA PARA MOBILE (Aqui está a mágica para o campo aparecer)
+           ========================================================================= */
+        @media (max-width: 1024px) {
             header { padding: 15px 20px; }
-            .header-content { flex-direction: column; gap: 15px; text-align: center; }
+            .header-content { flex-direction: column; gap: 15px; }
+            .brand { justify-content: center; }
             h1 { font-size: 2rem; }
             
-            .main-container { padding: 10px; margin: 10px auto; gap: 20px; }
-            
-            /* Campo em formato retrato no mobile */
-            .pitch-area { height: 135vw; border-width: 3px; border-radius: 10px; }
-            
-            /* Cards menores no mobile */
-            .player-card { width: 22vw; height: 32vw; }
-            .p-name { font-size: 0.6rem; letter-spacing: 0; }
+            /* O container vira coluna */
+            .main-container {
+                flex-direction: column; 
+                padding: 10px;
+                gap: 30px;
+            }
+
+            /* FORÇA O CAMPO A TER ALTURA E APARECER */
+            .pitch-area {
+                flex: none; /* Desliga o flex que estava colapsando a altura */
+                width: 100%;
+                min-width: 0; /* Reseta o min-width de 750px do desktop */
+                height: 135vw; /* Altura proporcional à largura da tela */
+                max-height: 750px; /* Limite para tablets */
+                border-width: 3px;
+                margin-bottom: 20px;
+            }
+
+            /* Ajuste proporcional dos Cards no Mobile */
+            .player-card {
+                width: 20vw; /* Largura dinâmica */
+                height: 28vw; /* Altura dinâmica */
+                max-width: 100px; /* Limite máximo */
+                max-height: 140px;
+            }
+
+            /* Ajuste da fonte dentro dos cards minúsculos */
+            .p-name { font-size: 0.65rem; letter-spacing: 0; }
             .p-pos { font-size: 0.55rem; }
-            
-            /* Banco de reservas em grade menor */
-            .bench-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
-            .bench-slot { height: 90px; }
-            .bench-slot img { height: 80%; }
-            .bench-name { font-size: 0.6rem; }
-            
-            /* Footer empilhado */
+            .card-body.empty i { font-size: 1.5rem; }
+
+            /* Banco de Reservas */
+            .bench-area {
+                width: 100%;
+                min-width: 0;
+                height: auto; /* Altura automática */
+                max-height: 600px; /* Com scroll se precisar */
+            }
+            .bench-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 por linha */
+                padding-bottom: 10px;
+            }
+
             .footer-container { flex-direction: column; text-align: center; }
-            .footer-dev { text-align: center; }
-            .tech-stack { justify-content: center; }
-            
-            /* Modal tela cheia */
+            .player-grid { grid-template-columns: repeat(3, 1fr); padding: 10px; }
             .modal-box { width: 95%; height: 90vh; }
-            .player-grid { grid-template-columns: repeat(3, 1fr); padding: 15px; gap: 10px; }
-            .select-card { padding: 10px 5px; }
-            .select-card img { width: 60px; height: 60px; }
-            .select-card .player-name { font-size: 0.8rem; }
-        }
-        
-        /* Ajuste fino para telas muito pequenas */
-        @media (max-width: 380px) {
-            .player-card { width: 23vw; height: 34vw; }
-            .bench-grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
@@ -585,7 +241,7 @@
         <div class="header-content">
             <div class="brand">
                 <img src="logosquadbuilder.png" alt="logosquadbuilder" class="cbf-badge" onerror="this.style.display='none'">
-                <h1>Brasil 2026</h1>
+                <h1>BRASIL 2026</h1>
             </div>
             <div class="formation-selector">
                 <select id="formationSelect" onchange="changeFormation()">
@@ -641,10 +297,8 @@
     </div>
 
     <script>
-        // CONFIGURAÇÃO DE PROXY PARA IMAGENS
         const PROXY = "https://images.weserv.nl/?url=";
 
-        /* ====== LISTA ATUALIZADA DE JOGADORES COM FOTOS FUNCIONAIS ====== */
         const rawPlayers = [
             // GOLEIROS
             { name: "Alisson", pos: "GOL", url: "https://cdn.sofifa.net/players/212/831/25_120.png" },
@@ -653,15 +307,13 @@
             { name: "Weverton", pos: "GOL", url: "https://cdn-img.zerozero.pt/img/jogadores/new/36/64/53664_weverton_20260131142614.png" },
             { name: "Hugo Souza", pos: "GOL", url: "https://cdn.sofifa.net/players/276/570/24_240.png" },
 
-
-            // LATERAIS DIREITOS
+            // LATERAIS
             { name: "Danilo", pos: "ZAG/LD", url: "https://cdn.sofifa.net/players/199/304/25_240.png" },
             { name: "Wesley", pos: "LD", url: "https://cdn.sofifa.net/players/080/170/26_240.png" },
             { name: "Vanderson", pos: "LD", url: "https://cdn.sofifa.net/players/263/781/26_120.png" },
             { name: "Yan Couto", pos: "LD", url: "https://cdn.sofifa.net/players/259/075/26_120.png" },
             { name: "Rodinei", pos: "LD", url: "https://cdn.sofifa.net/players/212/091/26_240.png" },
 
-            // LATERAIS ESQUERDOS
             { name: "Alex Sandro", pos: "LE", url: "https://cdn.sofifa.net/players/191/043/24_240.png" },
             { name: "Douglas Santos", pos: "LE", url: "https://www.ogol.com.br/img/jogadores/32/252432_20220715030007_douglas_santos.png" },
             { name: "G. Arana", pos: "LE", url: "https://cdn-img.zerozero.pt/img/jogadores/new/70/11/417011_guilherme_arana_20260113001243.jpg" },
@@ -687,20 +339,16 @@
             { name: "João Gomes", pos: "VOL", url: "https://cdn.sofifa.net/players/273/463/26_240.png" },
             { name: "Joelinton", pos: "VOL", url: "https://cdn.sofifa.net/players/223/334/26_240.png" },
 
-
-            // MEIO-CAMPISTAS
+            // MEIO
             { name: "Lucas Paquetá", pos: "MEI", url: "https://cdn.sofifa.net/players/233/927/26_240.png" },
             { name: "Gerson", pos: "MEI", url: "https://www.ogol.com.br/img/jogadores/new/24/04/422404_gerson_20260120235013.jpg" },
             { name: "Andreas Pereira", pos: "MEI", url: "https://www.ogol.com.br/img/jogadores/new/08/88/370888_andreas_pereira_20240816193756.png" },
             { name: "Neymar Jr", pos: "MEI", url: "https://cdn.sofifa.net/players/190/871/25_120.png" },
 
-            // PONTAS ESQUERDAS
+            // PONTAS
             { name: "Vini Jr", pos: "PE", url: "https://cdn.sofifa.net/players/238/794/25_120.png" },
             { name: "Martinelli", pos: "PE", url: "https://cdn.sofifa.net/players/251/566/26_240.png" },
             { name: "Samu Lino", pos: "PE", url: "https://cdn.sofifa.net/players/251/445/25_240.png" },
-
-
-            // PONTAS DIREITAS
             { name: "Rodrygo", pos: "PD", url: "https://cdn.sofifa.net/players/243/812/26_120.png" },
             { name: "Savinho", pos: "PD", url: "https://cdn.sofifa.net/players/270/409/26_120.png" },
             { name: "Raphinha", pos: "PD", url: "https://cdn.sofifa.net/players/233/419/26_120.png" },
@@ -708,8 +356,7 @@
             { name: "Luiz Henrique", pos: "PD", url: "https://cdn-img.zerozero.pt/img/jogadores/new/43/28/564328_luiz_henrique_20250218163216.jpg" },
             { name: "Antony", pos: "PD", url: "https://www.ogol.com.br/img/jogadores/new/96/22/619622_antony_20251103173500.png" },
 
-            // ATACANTES
-
+            // ATAQUE
             { name: "Endrick", pos: "ATA", url: "https://cdn.sofifa.net/players/272/505/26_120.png" },
             { name: "Richarlison", pos: "ATA", url: "https://cdn.sofifa.net/players/231/943/26_120.png" },
             { name: "Pedro", pos: "ATA", url: "https://www.ogol.com.br/img/jogadores/new/13/59/481359_pedro_20250617101858.png" },
@@ -719,122 +366,67 @@
             { name: "Matheus Cunha", pos: "ATA", url: "https://cdn.sofifa.net/players/240/243/26_120.png" }
         ];
 
-        /* ====== ESTADO GLOBAL ====== */
         let playerDatabase = [];
         let starters = new Array(11).fill(null);
         let bench = new Array(15).fill(null);
         let currentSelectionTarget = null;
         let activeFormation = "4-3-3";
 
-        /* ====== FORMAÇÕES TÁTICAS ====== */
         const formations = {
             "4-3-3": [
-                { t: 85, l: 50, p: "GOL" },
-                { t: 68, l: 15, p: "LE" },
-                { t: 72, l: 35, p: "ZAG" },
-                { t: 72, l: 65, p: "ZAG" },
-                { t: 68, l: 85, p: "LD" },
-                { t: 48, l: 30, p: "MC" },
-                { t: 40, l: 50, p: "MEI" },
-                { t: 48, l: 70, p: "MC" },
-                { t: 20, l: 20, p: "PE" },
-                { t: 15, l: 50, p: "ATA" },
-                { t: 20, l: 80, p: "PD" }
+                { t: 85, l: 50, p: "GOL" }, { t: 68, l: 15, p: "LE" }, { t: 72, l: 37, p: "ZAG" },
+                { t: 72, l: 63, p: "ZAG" }, { t: 68, l: 85, p: "LD" }, { t: 48, l: 30, p: "MC" },
+                { t: 55, l: 50, p: "VOL" }, { t: 48, l: 70, p: "MC" }, { t: 20, l: 20, p: "PE" },
+                { t: 15, l: 50, p: "ATA" }, { t: 20, l: 80, p: "PD" }
             ],
             "4-4-2": [
-                { t: 85, l: 50, p: "GOL" },
-                { t: 68, l: 15, p: "LE" },
-                { t: 72, l: 35, p: "ZAG" },
-                { t: 72, l: 65, p: "ZAG" },
-                { t: 68, l: 85, p: "LD" },
-                { t: 40, l: 15, p: "PE" },
-                { t: 48, l: 40, p: "VOL" },
-                { t: 48, l: 60, p: "VOL" },
-                { t: 40, l: 85, p: "PD" },
-                { t: 15, l: 35, p: "ATA" },
-                { t: 15, l: 65, p: "ATA" }
+                { t: 85, l: 50, p: "GOL" }, { t: 68, l: 15, p: "LE" }, { t: 72, l: 37, p: "ZAG" },
+                { t: 72, l: 63, p: "ZAG" }, { t: 68, l: 85, p: "LD" }, { t: 40, l: 15, p: "ME" },
+                { t: 48, l: 40, p: "VOL" }, { t: 48, l: 60, p: "VOL" }, { t: 40, l: 85, p: "MD" },
+                { t: 15, l: 35, p: "ATA" }, { t: 15, l: 65, p: "ATA" }
             ],
             "4-2-3-1": [
-                { t: 85, l: 50, p: "GOL" },
-                { t: 68, l: 15, p: "LE" },
-                { t: 72, l: 35, p: "ZAG" },
-                { t: 72, l: 65, p: "ZAG" },
-                { t: 68, l: 85, p: "LD" },
-                { t: 50, l: 35, p: "VOL" },
-                { t: 50, l: 65, p: "VOL" },
-                { t: 28, l: 20, p: "PE" },
-                { t: 35, l: 50, p: "MEI" },
-                { t: 28, l: 80, p: "PD" },
-                { t: 12, l: 50, p: "ATA" }
+                { t: 85, l: 50, p: "GOL" }, { t: 68, l: 15, p: "LE" }, { t: 72, l: 37, p: "ZAG" },
+                { t: 72, l: 63, p: "ZAG" }, { t: 68, l: 85, p: "LD" }, { t: 55, l: 35, p: "VOL" },
+                { t: 55, l: 65, p: "VOL" }, { t: 28, l: 20, p: "PE" }, { t: 35, l: 50, p: "MEI" },
+                { t: 28, l: 80, p: "PD" }, { t: 12, l: 50, p: "ATA" }
             ],
             "3-4-3": [
-                { t: 89, l: 50, p: "GOL" },
-                { t: 72, l: 25, p: "ZAG" },
-                { t: 67, l: 50, p: "ZAG" },
-                { t: 72, l: 75, p: "ZAG" },
-                { t: 45, l: 10, p: "LE" },
-                { t: 52, l: 35, p: "VOL" },
-                { t: 52, l: 65, p: "VOL" },
-                { t: 45, l: 90, p: "LD" },
-                { t: 20, l: 25, p: "PE" },
-                { t: 15, l: 50, p: "ATA" },
-                { t: 20, l: 75, p: "PD" }
+                { t: 85, l: 50, p: "GOL" }, { t: 72, l: 25, p: "ZAG" }, { t: 78, l: 50, p: "ZAG" },
+                { t: 72, l: 75, p: "ZAG" }, { t: 45, l: 10, p: "AE" }, { t: 52, l: 35, p: "VOL" },
+                { t: 52, l: 65, p: "VOL" }, { t: 45, l: 90, p: "AD" }, { t: 20, l: 25, p: "PE" },
+                { t: 15, l: 50, p: "ATA" }, { t: 20, l: 75, p: "PD" }
             ]
         };
 
-        /* ====== INICIALIZAÇÃO ====== */
         function loadPlayers() {
             playerDatabase = rawPlayers.map((p, i) => ({
-                id: i + 1,
-                name: p.name,
-                pos: p.pos,
+                id: i + 1, name: p.name, pos: p.pos,
                 img: PROXY + encodeURIComponent(p.url) + "&w=200&h=200&fit=cover&a=top"
             }));
-
-            renderField();
-            renderBench();
-            updateCounter();
+            renderField(); renderBench(); updateCounter();
         }
 
         function imgError(image) {
             image.src = PROXY + encodeURIComponent("https://cdn.sofifa.net/players/notfound_0_120.png");
-            image.onerror = null;
-            return true;
+            image.onerror = null; return true;
         }
 
-        /* ====== RENDERIZAÇÃO ====== */
         function renderField() {
             const container = document.getElementById("fieldPlayers");
             container.innerHTML = "";
-
             formations[activeFormation].forEach((pos, index) => {
                 const pid = starters[index];
                 const p = playerDatabase.find(x => x.id === pid);
                 const card = document.createElement("div");
                 card.className = "player-card";
-                card.style.top = pos.t + "%";
-                card.style.left = pos.l + "%";
+                card.style.top = pos.t + "%"; card.style.left = pos.l + "%";
                 card.onclick = () => openModal("starter", index);
-
-                if (p) {
-                    card.innerHTML = `
-                <div class="card-body filled">
-                    <img src="${p.img}" onerror="imgError(this)" crossorigin="anonymous">
-                    <div class="card-info">
-                        <div class="p-name">${p.name}</div>
-                        <div class="p-pos">${p.pos}</div>
-                    </div>
-                </div>
-            `;
+                
+                if(p) {
+                    card.innerHTML = `<div class="card-body filled"><img src="${p.img}" onerror="imgError(this)" crossorigin="anonymous"><div class="card-info"><div class="p-name">${p.name}</div><div class="p-pos">${p.pos}</div></div></div>`;
                 } else {
-                    card.innerHTML = `
-                <div class="card-body empty">
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="card-info">
-                    <div class="p-pos">${pos.p}</div>
-                </div>
-            `;
+                    card.innerHTML = `<div class="card-body empty"><i class="fas fa-plus"></i></div><div class="card-info" style="justify-content:center"><div class="p-pos">${pos.p}</div></div>`;
                 }
                 container.appendChild(card);
             });
@@ -843,25 +435,16 @@
         function renderBench() {
             const container = document.getElementById("benchGrid");
             container.innerHTML = "";
-
             bench.forEach((pid, index) => {
                 const p = playerDatabase.find(x => x.id === pid);
                 const slot = document.createElement("div");
                 slot.className = "bench-slot";
                 slot.onclick = () => openModal("bench", index);
-
-                if (p) {
+                if(p) {
                     slot.style.borderColor = "var(--brasil-yellow)";
-                    slot.innerHTML = `
-                <img src="${p.img}" onerror="imgError(this)" crossorigin="anonymous">
-                <div class="bench-name">${p.name}</div>
-            `;
+                    slot.innerHTML = `<img src="${p.img}" onerror="imgError(this)" crossorigin="anonymous"><div class="bench-name">${p.name}</div>`;
                 } else {
-                    slot.innerHTML = `
-                <div style="width:100%;height:100%;display:flex;justify-content:center;align-items:center;color:#444;">
-                    <i class="fas fa-plus"></i>
-                </div>
-            `;
+                    slot.innerHTML = `<div style="width:100%;height:100%;display:flex;justify-content:center;align-items:center;color:#444;"><i class="fas fa-plus"></i></div>`;
                 }
                 container.appendChild(slot);
             });
@@ -873,7 +456,6 @@
             document.getElementById("counter").innerText = `${s + b}/26`;
         }
 
-        /* ====== MODAL ====== */
         function openModal(type, index) {
             currentSelectionTarget = { type, index };
             document.getElementById("playerModal").style.display = "flex";
@@ -881,56 +463,32 @@
             document.getElementById("searchBox").focus();
             renderPlayerPool();
         }
+        function closeModal() { document.getElementById("playerModal").style.display = "none"; }
 
-        function closeModal() {
-            document.getElementById("playerModal").style.display = "none";
-        }
-
-        function filterPlayers() {
-            renderPlayerPool(document.getElementById("searchBox").value.toLowerCase());
-        }
+        function filterPlayers() { renderPlayerPool(document.getElementById("searchBox").value.toLowerCase()); }
 
         function renderPlayerPool(term = "") {
             const container = document.getElementById("playerPool");
             container.innerHTML = "";
             const selected = [...starters, ...bench];
-
             playerDatabase.forEach(p => {
-                if (term && !p.name.toLowerCase().includes(term)) return;
+                if(term && !p.name.toLowerCase().includes(term)) return;
                 const isSelected = selected.includes(p.id);
-
                 const card = document.createElement("div");
                 card.className = "select-card";
-                if (isSelected) {
-                    card.style.opacity = "0.3";
-                    card.style.pointerEvents = "none";
-                }
-
-                card.innerHTML = `
-            <img src="${p.img}" onerror="imgError(this)" crossorigin="anonymous">
-            <div class="player-name">${p.name}</div>
-            <div class="player-pos">${p.pos}</div>
-        `;
-
+                if(isSelected) { card.style.opacity = "0.4"; card.style.pointerEvents = "none"; }
+                card.innerHTML = `<img src="${p.img}" onerror="imgError(this)" crossorigin="anonymous"><div style="font-weight:bold;font-size:0.9rem;color:#fff">${p.name}</div><div style="font-size:0.75rem;color:var(--brasil-yellow)">${p.pos}</div>`;
                 card.onclick = () => selectPlayer(p.id);
                 container.appendChild(card);
             });
         }
 
         function selectPlayer(id) {
-            if (currentSelectionTarget.type === "starter") {
-                starters[currentSelectionTarget.index] = id;
-            } else {
-                bench[currentSelectionTarget.index] = id;
-            }
-
-            renderField();
-            renderBench();
-            updateCounter();
-            closeModal();
+            if(currentSelectionTarget.type === "starter") starters[currentSelectionTarget.index] = id;
+            else bench[currentSelectionTarget.index] = id;
+            renderField(); renderBench(); updateCounter(); closeModal();
         }
 
-        /* ====== AÇÕES ====== */
         function changeFormation() {
             activeFormation = document.getElementById("formationSelect").value;
             renderField();
@@ -940,8 +498,7 @@
             const element = document.getElementById("exportContent");
             const btn = document.querySelector(".btn-main");
             const oldHtml = btn.innerHTML;
-
-            btn.innerHTML = "<i class='fas fa-circle-notch fa-spin'></i><span>GERANDO...</span>";
+            btn.innerHTML = "<i class='fas fa-circle-notch fa-spin'></i> GERANDO...";
             btn.style.pointerEvents = "none";
 
             setTimeout(() => {
@@ -954,47 +511,33 @@
                 }).then(canvas => {
                     const link = document.createElement("a");
                     link.download = "Brasil_2026_Convocacao.png";
-                    link.href = canvas.toDataURL("image/png", 1.0);
+                    link.href = canvas.toDataURL("image/png");
                     link.click();
-
                     btn.innerHTML = oldHtml;
                     btn.style.pointerEvents = "all";
                 }).catch(err => {
-                    console.error("Erro ao gerar imagem:", err);
-                    alert("Erro ao gerar a imagem. Tente novamente.");
+                    alert("Erro ao gerar imagem.");
                     btn.innerHTML = oldHtml;
                     btn.style.pointerEvents = "all";
                 });
             }, 500);
         }
 
-        // Fechar modal ao clicar fora
-        window.onclick = e => {
-            if (e.target == document.getElementById("playerModal")) {
-                closeModal();
-            }
-        }
-
-        // Inicializar
-        window.onload = loadPlayers;
-
-
         document.getElementById("suggestBtn").addEventListener("click", () => {
-            const jogador = prompt("Qual jogador você acha que está faltando?");
-            if (!jogador) return;
-
-            const mensagem = `Olá! Vim do site Convocação Seleção Brasileira 2026 e acho que está faltando o jogador ${jogador} na pré lista de convocados!`;
-            const telefone = "5522997793222"; // Ex: 5521999999999
-
-            const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, "_blank");
+            const jogador = prompt("Qual jogador está faltando?");
+            if (jogador) {
+                const url = `https://wa.me/5522997793222?text=${encodeURIComponent("Olá! Sugestão para o Squad Builder: " + jogador)}`;
+                window.open(url, "_blank");
+            }
         });
 
+        window.onclick = e => { if(e.target == document.getElementById("playerModal")) closeModal(); }
+        window.onload = loadPlayers;
     </script>
 
     <footer>
         <div class="footer-container">
-            <div class="brand">
+            <div class="footer-brand">
                 <img src="logosquadbuilder.png" alt="logosquadbuilder" class="sb-badge" onerror="this.style.display='none'">
                 <h1>SQUAD <span>BUILDER</span></h1>
                 <p>Feito para torcedores, por torcedores.</p>
